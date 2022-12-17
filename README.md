@@ -73,13 +73,13 @@ git clone https://github.com/AmadorBioscience/Shimmer.git
 
 Start app in a subdirectory called "Shimmer"
 ```{r}
-shiny::runApp("Shimmer")
+shiny::runApp("Shimmer", launch.browser = TRUE)
 ```
 
 
 If loaded into the `Shimmer` RStudio project via the "Shimmer.Rproj" file
 ```{r}
-shiny::runApp()
+shiny::runApp(launch.browser = TRUE)
 ```
 
 
