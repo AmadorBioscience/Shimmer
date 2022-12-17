@@ -73,14 +73,16 @@ git clone https://github.com/AmadorBioscience/Shimmer.git
 
 Start app in a subdirectory called "Shimmer"
 ```{r}
-shiny::runApp("Shimmer", launch.browser = TRUE)
+shiny::runApp("Shimmer")
 ```
 
 
 If loaded into the `Shimmer` RStudio project via the "Shimmer.Rproj" file
 ```{r}
-shiny::runApp(launch.browser = TRUE)
+shiny::runApp()
 ```
+
+Add argument `launch.browser = TRUE` to `shiny::runApp()` commands to start the app in your default web browser
 
 
 ## Acknowledgments
