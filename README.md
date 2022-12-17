@@ -63,13 +63,10 @@ For specific versions, see [session information log file](www/session_informatio
 
 ## Installation
 
-Direct download in R and RStudio IDE:
-```{r}
-devtools::install_github("AmadorBioscience/Shimmer")
+Install Shiny application by cloning with HTTPS/SSH or via direct download of source code:
+```{bash}
+git clone https://github.com/AmadorBioscience/Shimmer.git
 ```
-
-Alternative installation methods include cloning with SSH/HTTPS or direct download of source code.
-
 
 
 ## Running the Application
