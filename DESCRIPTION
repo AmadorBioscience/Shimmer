@@ -8,7 +8,7 @@ Authors@R: c(
     person("Jason", "Chittenden", , "jason.chittenden@regeneron.com", role = "aut"),
     person("Nidal", "Huniti", , "nidal.huniti@amadorbio.com", role = "ctb"),
     person("Kamal", "Srinivasan", , "timothy.soo@regeneron.com", role = "ctb"),
-    person("Jenny-Hoa", "Nguyen", , "jennyhoa.nguyen@regeneron.com", role = "ctb"),
+    person("Jenny-Hoa", "Nguyen", , "jennyhoa.nguyen@regeneron.com", role = "ctb")
   )
 Description: Shiny App for simulating from ODE-based PK models via the
     mrgsolve package.
