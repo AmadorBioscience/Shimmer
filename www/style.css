@@ -1,0 +1,104 @@
+.nav a {
+    color: #0A5EAA;
+    font-weight: bold; 
+}
+
+.modal-lg {
+    margin-top: 50px;
+}
+
+.sim-opts-button, .sim-opts-button.btn:focus {
+ background-color: #0A5EAA;
+    color: #ffffff;
+    text-align:left;
+    display: block;
+    margin: 0 auto; 
+    width: 90%;
+    border-color: #0A5EAA;
+    height: 40px;
+}
+
+.sim-opts-button.btn:hover {
+    background-color: #ffffff;
+    color: #0A5EAA;
+    text-align:left;
+    display: block;
+    margin: 0 auto; 
+    width: 90%;
+    border-color: #0A5EAA;
+    box-shadow: inset 0 0px 0px #0A5EAA;
+    height: 40px;
+}
+
+.stepButton, .stepButton:focus {
+    background-color: #2ecc71 !important;
+    color: #ffffff !important;
+    text-align: left !important;
+    display: block !important;
+    margin: 0 auto !important; 
+    width: 90% !important;
+    /*border-color: #2ecc71 !important;*/
+    border-color: #adadad !important;
+    height: 40px !important;
+}
+
+.stepButton:hover {
+    background-color: #ffffff !important;
+    color: #2ecc71 !important;
+    text-align: left !important;
+    display: block !important;
+    margin: 0 auto !important; 
+    width: 90% !important;
+    /*border-color: #2ecc71 !important;*/
+    border-color: #adadad !important;
+    box-shadow: inset 0 0px 0px #2ecc71 !important;
+    height: 40px !important;
+}
+
+.user_input_popup {
+    height: auto;
+    overflow: auto;
+}
+
+.left_align_col {
+    float: left;
+    width: 22.5%;
+    margin-right:2.5%;
+}
+
+.right_align_col {
+    float: right;
+    width: 22.5%;
+    margin-right:2.5%;
+}
+
+.shiny-output-error-invalid-input {
+    color:  red;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#report_bttn{
+    display:inline-block;
+    margin : 0px 15px 0px 0px;
+}
+.css_report_watermark{
+    display:inline-block;
+}
+
+.css_tgrid_end {
+    display:inline-block;
+}
+
+.css_tgrid_end_check {
+    display:inline-block;
+    margin : 0px 0px 0px 20px;
+}
+
+.css_plotting_options{
+    display:inline-block;
+}
+
+#downloadData_bttn {
+    float : right;
+}

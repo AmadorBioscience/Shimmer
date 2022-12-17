@@ -1,0 +1,18 @@
+Package: Shimmer
+Title: Shimmer
+Version: 0.0.0.9000
+Authors@R: c(
+    person("Ian", "Linsmeier", , "ian.linsmeier@amadorbio.com", role = c("cre", "aut")),
+    person("Ryan", "Ghannam", , "ryan.ghannam@amadorbio.com", role = "aut"),
+    person("Martin", "Lardiwinata", , "martin.lardiwinata@amadorbio.com", role = "aut"),
+    person("Jason", "Chittenden", , "jason.chittenden@regeneron.com", role = "aut"),
+    person("Nidal", "Huniti", , "nidal.huniti@amadorbio.com", role = "ctb"),
+    person("Kamal", "Srinivasan", , "timothy.soo@regeneron.com", role = "ctb"),
+    person("Jenny-Hoa", "Nguyen", , "jennyhoa.nguyen@regeneron.com", role = "ctb"),
+  )
+Description: Shiny App for simulating from ODE-based PK models via the
+    mrgsolve package.
+License: AGPL (>= 3)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.1

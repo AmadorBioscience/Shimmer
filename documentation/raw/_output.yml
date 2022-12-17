@@ -1,0 +1,18 @@
+bookdown::gitbook:
+  css: assets_custom/style.css
+  includes:
+    before_body: 
+    after_body: 
+  highlight: tango
+  config:
+    toc:
+      collapse: false
+      before: |
+        <li class="toc-logo"><img src="images/Regeneron_logo.svg.png"></li>
+    download: ["pdf"]
+    sharing:
+      github: yes
+      facebook: no
+      twitter: yes
+      all: no
+bookdown::epub_book: default

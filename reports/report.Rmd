@@ -1,0 +1,262 @@
+---
+header-includes: 
+  \usepackage{fancyhdr} 
+   \usepackage{graphicx} 
+   \usepackage{eurosym} 
+   \usepackage[lastpage,user]{zref}
+   \usepackage{booktabs,xcolor} 
+   \pagestyle{fancy} 
+   \fancyhf{} 
+   \addtolength{\headheight}{0.5cm}
+   \lhead{`r params$set_title` - \today} 
+   \rhead{\includegraphics[width=4cm]{Logo.png}} 
+   \fancyfoot[R]{Page \thepage ~of~ \zpageref{LastPage}}
+   \fancypagestyle{plain}{\pagestyle{fancy}} 
+output: pdf_document
+params:
+  sumstat: NA
+  graphs: NA
+  set_title: 
+  set_author: 
+  compound:
+  description:
+  dose_units:
+  model_name:
+  model_file:
+  model_param:
+  model_omega:
+  model_sigma:
+  mod_names:
+  mod_details:
+  mod_init:
+  mod_outvars:
+  sim_opts:
+  solver_opts:
+  tgrid_list:
+  sim_times:
+  rx_input:
+  rx_dataset:
+  mod_code:
+  mod_slots:
+  mod_obj:
+title: "`r params$set_title`"
+author: "`r params$set_author`"
+
+---
+
+
+```{r, setup, include=FALSE}
+# The `params` object is available in the document.
+
+library(ggplot2)
+library(knitr)
+
+df_summary <- params$sumstat
+
+vec_to_bulletlist <- function(vec) {
+   ## https://stackoverflow.com/questions/66109880/how-to-print-a-list-as-bullet-items-in-word-using-rmarkdown
+   cat(paste("*", vec), sep = "\n")
+}
+
+named_list_to_bulletlist <- function(nm_list) {
+   cat(paste("*", names(nm_list), "=" , nm_list), sep = "\n")
+}
+```
+
+
+
+```{r, model-file, results='asis', echo=F}
+if(isTRUE(length(params$model_name) > 0)) {
+   cat("# Model:   ", params$model_name, " \n")
+}
+```
+
+
+
+```{r, description, results='asis',echo=F}
+if(nchar(params$description) > 1){ # If there was a description specified, add it to the report
+cat('\n## Description\n')
+cat(params$description)
+}
+```
+
+
+
+## Simulation Output Figures
+```{r, sim-graphs, fig.width=18, fig.height=24,echo=FALSE,results='hide',fig.keep='all',message = FALSE,warning=F}
+## Add the figures to the report
+suppressWarnings(params$graphs$report_lin)
+```
+
+## Simulation Output Figures (cont)
+```{r, sim-graphs2, fig.width=18, fig.height=24,echo=FALSE,results='hide',fig.keep='all',message = FALSE,warning=F}
+## Add the figures to the report
+suppressWarnings(params$graphs$report_log)
+```
+
+\newpage
+
+## PK Summary Statistics
+```{r, summary-table, echo=F}
+## Add the summary statistics to the report
+  kable(df_summary,caption=paste("PK Summary statistics ",params$compound))
+```
+
+
+\newpage
+
+```{r, model-names, results='asis', echo=F}
+if (isTRUE(length(params$mod_names) > 0)) { 
+   cat("## Model Names \n")
+   named_list_to_bulletlist(nm_list = params$mod_names)
+}
+```
+
+```{r, model-details, results='asis', echo=F}
+if(isTRUE(length(params$mod_details) > 0)) { 
+   cat("## Model Details \n")
+   kable(params$mod_details, caption = "Model Details")
+}
+```
+
+```{r, model-param, results='asis', echo=F}
+if (isTRUE(length(params$model_param) > 0)) { # If model_param is defined, add it to the report
+   cat("## Model Parameters \n")
+   kable(params$model_param, caption = "Model Parameters")
+}
+```
+
+\newpage
+
+```{r, omega-matrix, results='asis', echo=F}
+if(isTRUE(length(params$model_omega) > 0)) { # If model_omega is defined, add it to the report
+   cat("## Omega Matrix \n")
+   kable(params$model_omega, caption = "Omega Matrix (correlation form)")
+}
+```
+
+
+
+```{r, sigma-matrix, results='asis', echo=F}
+if(isTRUE(length(params$model_sigma) > 0)) { # If model_sigma is defined, add it to the report
+   cat("## Sigma Matrix \n")
+   kable(params$model_sigma, caption = "Sigma Matrix (correlation form)")
+}
+```
+
+
+\newpage
+
+
+
+```{r, initial-conditions, results='asis', echo=F}
+if(isTRUE(length(params$mod_init) > 0)) {
+   cat("## Initial Conditions \n")
+   named_list_to_bulletlist(nm_list = as.list(params$mod_init))
+}
+```
+
+
+
+```{r, output-variables, results='asis', echo=F}
+if(isTRUE(length(params$mod_outvars) > 0)) {
+   cat("## Output Variables \n")
+   named_list_to_bulletlist(nm_list = params$mod_outvars)
+}
+```
+
+\newpage
+
+```{r, sim-settings, results='asis', echo=F}
+if(isTRUE(length(params$sim_opts) > 0)) {
+   cat("## Simulation Settings \n")
+   named_list_to_bulletlist(nm_list = params$sim_opts)
+}
+```
+
+
+
+```{r, solver-settings, results='asis', echo=F}
+if(isTRUE(length(params$solver_opts) > 0)) {
+   cat("## Solver Settings \n")
+   named_list_to_bulletlist(nm_list = params$solver_opts)
+}
+```
+
+
+
+```{r, tgrid-settings, results='asis', echo=F}
+if (isTRUE(length(params$tgrid_list) > 0)) { 
+   cat("## Time Grid Settings \n")
+   named_list_to_bulletlist(nm_list = params$tgrid_list)
+}
+```
+
+
+
+```{r, sim-time-points, results='asis', echo=F}
+if(isTRUE(length(params$sim_times) > 0)) { 
+   cat("## Simulation Time Points \n")
+   cat(params$sim_times)
+}
+```
+
+\newpage
+
+```{r, rx-dosing-spec, results='asis', echo=F}
+if(isTRUE(length(params$rx_input) > 0)) {
+   cat("## Rx Dosing Specification \n")
+   named_list_to_bulletlist(nm_list = as.list(params$rx_input))
+}
+```
+
+
+<!-- adjust latex font size | stackoverflow link: https://stackoverflow.com/questions/40840986/knitrkable-is-there-a-way-to-reduce-the-font-size -->
+<!-- latex font sizes reference guide: https://www.overleaf.com/learn/latex/Font_sizes%2C_families%2C_and_styles#Reference_guide -->
+
+\scriptsize
+
+```{r, rx-regimen-info, results='asis', echo=F}
+if(isTRUE(length(params$rx_dataset) > 0)) {
+  cat("## Rx Dosing Regimen Information \n")
+  kable(params$rx_dataset %>% select(REGNUM, REGLAB, RXLABEL) %>% distinct(), caption = "Rx Dosing Regimen Information", booktabs = TRUE)
+}
+```
+
+\normalsize
+
+```{r, rx-dosing-data, results='asis', echo=F}
+if(isTRUE(length(params$rx_dataset) > 0)) {
+   cat("## Rx Dosing Dataset \n")
+   kable(params$rx_dataset %>% select(-RXLABEL), caption = "Rx Dosing Dataset")
+}
+```
+
+
+
+```{r, model-object, results='asis', echo=F}
+# if(isTRUE(length(params$mod_obj) > 0)) {
+#    cat("## `mrgsolve` Model Object\n")
+#    print(params$mod_obj)
+# }
+```
+
+
+
+```{r, model-code, results='asis', echo=F}
+# if(isTRUE(length(params$mod_code) > 0)) {
+#    cat(params$mod_obj@code, sep = "\n")
+# }
+```
+
+
+
+```{r, model-slots, results='asis', echo=F}
+# if(isTRUE(length(params$mod_slots) > 0)) {
+#    print(params$mod_slots)
+# }
+```
+
+
+
+

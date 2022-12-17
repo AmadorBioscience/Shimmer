@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Simulation Details | Shimmer User Guide</title>
+  <meta name="description" content="Shiny Model Explorer User Guide" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Simulation Details | Shimmer User Guide" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Shiny Model Explorer User Guide" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Simulation Details | Shimmer User Guide" />
+  
+  <meta name="twitter:description" content="Shiny Model Explorer User Guide" />
+  
+
+
+
+<meta name="date" content="2022-12-17" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="images/favicon/favicon.png" type="image/x-icon" />
+<link rel="prev" href="modselect.html"/>
+<link rel="next" href="simulation-output.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="assets_custom/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="toc-logo"><img src="images/Regeneron_logo.svg.png"></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#resources"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="dash.html"><a href="dash.html"><i class="fa fa-check"></i><b>1</b> Dashboard</a></li>
+<li class="chapter" data-level="2" data-path="simsteps.html"><a href="simsteps.html"><i class="fa fa-check"></i><b>2</b> Simulation Steps</a></li>
+<li class="chapter" data-level="3" data-path="modselect.html"><a href="modselect.html"><i class="fa fa-check"></i><b>3</b> Model Selection</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="modselect.html"><a href="modselect.html#modlib"><i class="fa fa-check"></i><b>3.1</b> Select from Model Library</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="modselect.html"><a href="modselect.html#model-library-abbreviations"><i class="fa fa-check"></i><b>3.1.1</b> Model Library Abbreviations</a></li>
+<li class="chapter" data-level="3.1.2" data-path="modselect.html"><a href="modselect.html#population-pk-models"><i class="fa fa-check"></i><b>3.1.2</b> Population PK Models</a></li>
+<li class="chapter" data-level="3.1.3" data-path="modselect.html"><a href="modselect.html#target-mediated-drug-disposition-models"><i class="fa fa-check"></i><b>3.1.3</b> Target-Mediated Drug Disposition Models</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="modselect.html"><a href="modselect.html#custommod"><i class="fa fa-check"></i><b>3.2</b> Upload Custom Model File</a></li>
+<li class="chapter" data-level="3.3" data-path="modselect.html"><a href="modselect.html#load-model"><i class="fa fa-check"></i><b>3.3</b> Load Model</a></li>
+<li class="chapter" data-level="3.4" data-path="modselect.html"><a href="modselect.html#model-parameters"><i class="fa fa-check"></i><b>3.4</b> Model Parameters</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="modselect.html"><a href="modselect.html#fe"><i class="fa fa-check"></i><b>3.4.1</b> Fixed Effects</a></li>
+<li class="chapter" data-level="3.4.2" data-path="modselect.html"><a href="modselect.html#random-effects"><i class="fa fa-check"></i><b>3.4.2</b> Random Effects</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="simdet.html"><a href="simdet.html"><i class="fa fa-check"></i><b>4</b> Simulation Details</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="simdet.html"><a href="simdet.html#define-dosing-regimen"><i class="fa fa-check"></i><b>4.1</b> Define Dosing Regimen</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="simdet.html"><a href="simdet.html#rx-label-syntax"><i class="fa fa-check"></i><b>4.1.1</b> Rx Label Syntax</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="simdet.html"><a href="simdet.html#submit-dosing-regimen"><i class="fa fa-check"></i><b>4.2</b> Submit Dosing Regimen</a></li>
+<li class="chapter" data-level="4.3" data-path="simdet.html"><a href="simdet.html#simulation-options"><i class="fa fa-check"></i><b>4.3</b> Simulation Options</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="simdet.html"><a href="simdet.html#time-grid"><i class="fa fa-check"></i><b>4.3.1</b> Time Grid</a></li>
+<li class="chapter" data-level="4.3.2" data-path="simdet.html"><a href="simdet.html#simsettings"><i class="fa fa-check"></i><b>4.3.2</b> Simulation Settings</a></li>
+<li class="chapter" data-level="4.3.3" data-path="simdet.html"><a href="simdet.html#solver-settings"><i class="fa fa-check"></i><b>4.3.3</b> Solver Settings</a></li>
+<li class="chapter" data-level="4.3.4" data-path="simdet.html"><a href="simdet.html#expand-rx-dataset"><i class="fa fa-check"></i><b>4.3.4</b> Expand Rx Dataset</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="simulation-output.html"><a href="simulation-output.html"><i class="fa fa-check"></i><b>5</b> Simulation Output</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="simulation-output.html"><a href="simulation-output.html#user-settings-output-metrics"><i class="fa fa-check"></i><b>5.1</b> User Settings &amp; Output Metrics</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="simulation-output.html"><a href="simulation-output.html#plotting-options"><i class="fa fa-check"></i><b>5.1.1</b> Plotting Options</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="simulation-output.html"><a href="simulation-output.html#start-simulation"><i class="fa fa-check"></i><b>5.2</b> Start Simulation</a></li>
+<li class="chapter" data-level="5.3" data-path="simulation-output.html"><a href="simulation-output.html#pharmacokinetic-profiles"><i class="fa fa-check"></i><b>5.3</b> Pharmacokinetic profiles</a></li>
+<li class="chapter" data-level="5.4" data-path="simulation-output.html"><a href="simulation-output.html#summary-statistics"><i class="fa fa-check"></i><b>5.4</b> Summary statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="report-generation.html"><a href="report-generation.html"><i class="fa fa-check"></i><b>6</b> Report Generation</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="report-generation.html"><a href="report-generation.html#final-report"><i class="fa fa-check"></i><b>6.1</b> Final Report</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="general-information.html"><a href="general-information.html"><i class="fa fa-check"></i><b>7</b> General Information</a></li>
+<li class="chapter" data-level="8" data-path="ref.html"><a href="ref.html"><i class="fa fa-check"></i><b>8</b> References</a></li>
+<li class="chapter" data-level="9" data-path="session-information.html"><a href="session-information.html"><i class="fa fa-check"></i><b>9</b> Session Information</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Shimmer User Guide</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="simdet" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Simulation Details<a href="simdet.html#simdet" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This section allows users to <span style=" font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #337AFF !important;">Submit Dosing Regimen</span> and provides <strong>Simulation Options</strong> such as <span style=" font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #337AFF !important;">Time Grid</span>, <span style=" font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #337AFF !important;">Simulation Settings</span>, and <span style=" font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #337AFF !important;">Solver Settings</span> that can be combined with the model to create complex sampling designs.</p>
+<p>Each of these are discussed below.</p>
+<p> </p>
+<div id="define-dosing-regimen" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Define Dosing Regimen<a href="simdet.html#define-dosing-regimen" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Dosing regimen submission creates an <font color="darkred"><em><code>Rx event object</code></em></font> that defines the dosing interventions for a single subject in the current model.</p>
+<p><strong>Define Dosing Regimen</strong> is an text input field that allows full customization of user-defined dosing regimens in a given simulation. By default, there is a placeholder Rx label specification in the text field to illustrate proper Rx label syntax required by <font color="darkred"><strong><code>mrgsolve::ev_rx</code></strong></font> for complex, mutli-period dosing regimens.</p>
+<p>The <a href="https://mrgsolve.org/docs/reference/ev_rx.html" title="mrgsolve: Create intervention objects from Rx input">Rx Label Syntax Documentation</a> button, located below the <strong>Define Dosing Regimen</strong> text input box, opens reference documentation for the <font color="darkred"><strong><code>mrgsolve::ev_rx</code></strong></font> function in a pop-up window. The rendered documentation outlines the syntax rules for defining a dosing regimen and includes some helpful examples. The Rx Label syntax rules are defined below:</p>
+<p> </p>
+<div id="rx-label-syntax" class="section level3 hasAnchor" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Rx Label Syntax<a href="simdet.html#rx-label-syntax" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p>The <font color="green"><strong><code>dose</code></strong></font> is found at the start of the string by sequential digits; this may be integer, decimal, or in scientific notation.</p></li>
+<li><p>Use <font color="green"><strong><code>in</code></strong></font> to identify the dosing compartment number; must be integer.</p></li>
+<li><p>Use <font color="green"><strong><code>q</code></strong></font> to identify the dosing interval; must be integer or decimal number (but not scientific notation).</p></li>
+<li><p>Use <font color="green"><strong><code>over</code></strong></font> to indicate an infusion and its duration; integer or decimal number.</p></li>
+<li><p>Use <font color="green"><strong><code>x</code></strong></font> to indicate total number of doses; must be integer.</p></li>
+<li><p>Use <font color="green"><strong><code>then</code></strong></font> or <font color="green"><strong><code>,</code></strong></font> to separate dosing periods.</p></li>
+<li><p>User <font color="green"><strong><code>after</code></strong></font> to insert a lag in the start of a period; integer or decimal number (but not scientific notation).</p></li>
+</ul>
+<p> </p>
+<p>Provided is an example of a three event dosing regimen using the mrgsolve <font color="darkred"><strong><code>mrgsolve::ev_rx</code></strong></font> function.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="simdet.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ev_rx</span>(<span class="st">&quot;150 mg over 0.25 in 2, </span></span>
+<span id="cb2-2"><a href="simdet.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="st">      100 mg in 1 over 0.25 q14 x 6 after 28, </span></span>
+<span id="cb2-3"><a href="simdet.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="st">      100 mg over 0.25 in 2 q7 x 8 after 0.5&quot;</span>)</span>
+<span id="cb2-4"><a href="simdet.html#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="simdet.html#cb2-5" aria-hidden="true" tabindex="-1"></a>Events<span class="sc">:</span></span>
+<span id="cb2-6"><a href="simdet.html#cb2-6" aria-hidden="true" tabindex="-1"></a>   time amt rate ii addl cmt evid</span>
+<span id="cb2-7"><a href="simdet.html#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>   <span class="fl">0.0</span> <span class="dv">150</span>  <span class="dv">600</span>  <span class="dv">0</span>    <span class="dv">0</span>   <span class="dv">2</span>    <span class="dv">1</span></span>
+<span id="cb2-8"><a href="simdet.html#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>  <span class="fl">28.0</span> <span class="dv">100</span>  <span class="dv">400</span> <span class="dv">14</span>    <span class="dv">5</span>   <span class="dv">1</span>    <span class="dv">1</span></span>
+<span id="cb2-9"><a href="simdet.html#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="fl">112.5</span> <span class="dv">100</span>  <span class="dv">400</span>  <span class="dv">7</span>    <span class="dv">7</span>   <span class="dv">2</span>    <span class="dv">1</span></span></code></pre></div>
+<hr />
+<div class="line-block"><a href="https://mrgsolve.org/user_guide/event-chapter.html#event-chapter" title="mrgsolve: Chapter 4 Event objects">mrgsolve: Event objects</a><br />
+<a href="https://mrgsolve.org/user_guide/event-chapter.html#ev_rx" title="mrgsolve: Chapter 4.7.2 ev_rx">mrgsolve: ev_rx</a></div>
+<hr />
+<p> </p>
+</div>
+</div>
+<div id="submit-dosing-regimen" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Submit Dosing Regimen<a href="simdet.html#submit-dosing-regimen" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<blockquote class="style1">
+<strong>Step 2/4 of Simulation Steps</strong>
+</blockquote>
+<p>After specifying the dosing regimen, <span style=" font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #337AFF !important;">Submit Dosing Regimen</span> submits the regimen and creates an <strong>Rx Dosing Event Dataset</strong> as an input to the simulation. The variables included in the dosing event dataset are fixed and the values are dynamically populated according to the specified regimen.</p>
+<p>Multiple dosing regimens can be and are submitted sequentially. Each regimen is labeled through unique identifier columns <code>REGNUM</code> and <code>REGLAB</code>. The dosing regimens that have <code>Include</code> selected will only be considered for downstream analysis. An example of submitting the default placeholder regimen segmented into three different regimens is shown below.</p>
+<p><img src="images/submitdosingregimen.png" /></p>
+<p>After submitting all desired regimens, they can be visualized through the <strong>Rx Dosing Profile</strong> plot, which depicts the concentration-time profile of a typical subject (no random effects applied) in the predefined dosing regimen, as shown below.</p>
+<p> </p>
+<p><img src="images/rxdosingprofile.png" /></p>
+<p>If there is an error in syntax upon submission, <strong>Define Dosing Regimen</strong> will return (“<font color="red"><em><em>Invalid Rx specification! Please follow Rx syntax rules</em></em>…</font>”).</p>
+<p> </p>
+<p>The Rx Dosing Event Dataset can be downloaded as a <code>(.csv)</code> file.</p>
+<p><img src="images/dosingeventdataset.png" /></p>
+<hr />
+<div class="line-block"><a href="https://mrgsolve.org/user_guide/data-set-chapter.html#data-set" title="mrgsolve: Chapter 3.2 Event data sets (data)">mrgsolve: Event data sets</a></div>
+<hr />
+<p> </p>
+</div>
+<div id="simulation-options" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Simulation Options<a href="simdet.html#simulation-options" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="time-grid" class="section level3 hasAnchor" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Time Grid<a href="simdet.html#time-grid" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The attributes of the simulation <span style=" font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #337AFF !important;">Time Grid</span> can be combined with the specified model to create complex sampling designs. The time attributes of the simulation will affect all outputs including the simulation input dataset, simulation output dataset, summary statistic, graph, and report, and are described below:</p>
+<ul>
+<li><p><font color="green "><strong><code>start</code></strong></font>: a number indicating start time for the simulation of the PK model.</p></li>
+<li><p><font color="green"><strong><code>end</code></strong></font>: a number indicating end time for the simulation of the PK model. By default, the <strong><code>end</code></strong> parameter is set to the calculated simulation end time. Selecting <code>modify end</code> allows a custom value for <strong><code>end</code></strong>.</p></li>
+<li><p><font color="green"><strong><code>delta</code></strong></font>: a number indicating the simulation time step, which is the duration between subsequent time points in the simulation.</p></li>
+<li><p><font color="green"><strong><code>add</code></strong></font>: is any arbitrary vector of additional times to simulate.</p></li>
+<li><p><font color="green"><strong><code>offset</code></strong></font>: a number that shifts all resulting <font color="darkred"><code>tgrid</code></font> time points by a fixed amount.</p></li>
+<li><p><font color="green"><strong><code>scale</code></strong></font>: a number that scales all other <font color="darkred"><code>tgrid</code></font> input parameters multiplicatively.</p></li>
+</ul>
+<hr />
+<div class="line-block"><a href="https://mrgsolve.org/user_guide/model-components.html#component-stime" title="mrgsolve: Chapter 1.3 Simulation time grid">mrgsolve: Simulation time grid</a><br />
+<a href="https://mrgsolve.org/user_guide/topics.html#topic-tgrid" title="mrgsolve: Chapter 10.4 Time grid objects">mrgsolve: Time grid objects</a></div>
+<hr />
+<p> </p>
+</div>
+<div id="simsettings" class="section level3 hasAnchor" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Simulation Settings<a href="simdet.html#simsettings" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <span style=" font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #337AFF !important;">Simulation Settings</span> option allows a user to apply the dosing event dataset to a population of subjects, choose the number of simulation iterations, and specify the random seed at which to perform simulations.</p>
+<ul>
+<li><p><font color="green"><strong><code>Specify number of subjects</code></strong></font>: Sets the number of subjects to simulate under the defined dosing regimen.</p></li>
+<li><p><font color="green"><strong><code>Specify number of simulation iterations</code></strong></font>: Sets the number of simulation iterations to run.</p></li>
+<li><p><font color="green"><strong><code>Specify random seed</code></strong></font>: A random seed is a starting point for generating random numbers and is useful for creating simulations that can be reproduced. The default seed is <code>2674474</code>. Although the seed is specified once, each simulation iteration will force the seed to change so that the random effect parameters are modeled appropriately.</p></li>
+</ul>
+<p> </p>
+</div>
+<div id="solver-settings" class="section level3 hasAnchor" number="4.3.3">
+<h3><span class="header-section-number">4.3.3</span> Solver Settings<a href="simdet.html#solver-settings" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <span style=" font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #337AFF !important;">Solver Settings</span> described below are stored in the model object and passed to the solver when the simulation is started.</p>
+<ul>
+<li><p><font color="green"><strong><code>atol</code></strong></font>: Absolute tolerance parameter for local error estimate. Adjust this value lower when you see state variables (compartments) that are becoming very small and possibly turning negative.</p></li>
+<li><p><font color="green"><strong><code>rtol</code></strong></font>: Relative tolerance parameter for local error estimate. Adjust this value lower when you want more precision around the calculation of state variables as the system advances.</p></li>
+<li><p><font color="green"><strong><code>ss_rtol</code></strong></font>: Steady state absolute tolerance parameter to control the local error estimate when mrgsolve is finding steady state.</p></li>
+<li><p><font color="green"><strong><code>ss_atol</code></strong></font>: Steady state relative tolerance parameter to control the local error estimate when mrgsolve is finding steady state.</p></li>
+<li><p><font color="green"><strong><code>maxsteps</code></strong></font>: This is the maximum number of steps the solver will take when advancing
+from one time to the next.</p></li>
+<li><p><font color="green"><strong><code>hmax</code></strong></font>: The maximum step size. By default, the solver will take steps of
+different sizes based on what is happening in the simulation. So in a model where time is in hours, reducing hmax to <code>0.1</code> will prevent the solver from taking a step larger than <code>0.1</code> hours as it tries to advance to the next time.</p></li>
+<li><p><font color="green"><strong><code>hmin</code></strong></font>: The minimum step size. Only set this if you’re familiar with this setting.</p></li>
+<li><p><font color="green"><strong><code>ixpr</code></strong></font>: A flag to enable printing messages to the R console when the
+solver switches between non-stiff and stiff solving modes. Rarely used.</p></li>
+<li><p><font color="green"><strong><code>mxhnil</code></strong></font>: The maximum number of messages printed when the model is solving.
+If you have a lot of messages, keep working on your model code.</p></li>
+</ul>
+<hr />
+<div class="line-block"><a href="https://mrgsolve.org/user_guide/model-components.html#solver-settings" title="mrgsolve: Chapter 1.4 Solver settings">mrgsolve: Solver settings</a><br />
+<a href="https://mrgsolve.org/user_guide/steady-state.html#steady-state" title="mrgsolve: Chapter 7 Steady state">mrgsolve: Steady state</a></div>
+<hr />
+<p> </p>
+</div>
+<div id="expand-rx-dataset" class="section level3 hasAnchor" number="4.3.4">
+<h3><span class="header-section-number">4.3.4</span> Expand Rx Dataset<a href="simdet.html#expand-rx-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<blockquote class="style1">
+<strong>Step 3/4 of Simulation Steps</strong>
+</blockquote>
+<p>In order to generate a standardized input dataset for simulation, which contains all default or user-defined <strong>Dosing Regimens</strong> and <strong>Simulation Options</strong>, the dataset needs to be “expanded”.</p>
+<p><strong><em>For example</em></strong>:
+After specifying the setting: <font color="green"><strong><code>Specify number of subjects</code></strong></font> in <a href="simdet.html#simsettings">4.3.2 Simulation Settings</a>, the same dosing regimen <font color="darkred"><em><code>Rx event object</code></em></font> can be “expanded” for multiple individuals to create a population dataset.</p>
+<p>The <span style=" font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #337AFF !important;">Expand Rx Dataset</span> button combines all simulation input parameters to generate and display the expanded dataset in the <strong>Simulation Input Dataset</strong> section at the bottom of the page.</p>
+<p>After the initial execution of <span style=" font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #337AFF !important;">Expand Rx Dataset</span>, modifying simulation input parameters on the “Model Selection” or “Simulation Options” tabs will require the user to re-expand the input dataset prior to simulation.</p>
+<p> </p>
+<p>Transient pop-up messages will appear stating the steps of the dataset expansion in the form of:</p>
+<p><img src="images/expandrxdataset.png" />
+<img src="images/rxdatasetcomplete.png" /></p>
+<p> </p>
+<p>The Simulation Input dataset can be downloaded as a <code>(.csv)</code> file.</p>
+<p><img src="images/download_2.png" />
+<img src="images/simulationinputdataset.png" /></p>
+<hr />
+<div class="line-block"><a href="https://mrgsolve.org/user_guide/event-chapter.html#event-chapter" title="mrgsolve: Chapter 4 Event Objects">mrgsolve: Event Objects</a></div>
+<hr />
+<p> </p>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="modselect.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="simulation-output.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": false
+}
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 9 Session Information | Shimmer User Guide</title>
+  <meta name="description" content="Shiny Model Explorer User Guide" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 9 Session Information | Shimmer User Guide" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Shiny Model Explorer User Guide" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 9 Session Information | Shimmer User Guide" />
+  
+  <meta name="twitter:description" content="Shiny Model Explorer User Guide" />
+  
+
+
+
+<meta name="date" content="2022-12-17" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="images/favicon/favicon.png" type="image/x-icon" />
+<link rel="prev" href="ref.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="assets_custom/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="toc-logo"><img src="images/Regeneron_logo.svg.png"></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#resources"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="dash.html"><a href="dash.html"><i class="fa fa-check"></i><b>1</b> Dashboard</a></li>
+<li class="chapter" data-level="2" data-path="simsteps.html"><a href="simsteps.html"><i class="fa fa-check"></i><b>2</b> Simulation Steps</a></li>
+<li class="chapter" data-level="3" data-path="modselect.html"><a href="modselect.html"><i class="fa fa-check"></i><b>3</b> Model Selection</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="modselect.html"><a href="modselect.html#modlib"><i class="fa fa-check"></i><b>3.1</b> Select from Model Library</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="modselect.html"><a href="modselect.html#model-library-abbreviations"><i class="fa fa-check"></i><b>3.1.1</b> Model Library Abbreviations</a></li>
+<li class="chapter" data-level="3.1.2" data-path="modselect.html"><a href="modselect.html#population-pk-models"><i class="fa fa-check"></i><b>3.1.2</b> Population PK Models</a></li>
+<li class="chapter" data-level="3.1.3" data-path="modselect.html"><a href="modselect.html#target-mediated-drug-disposition-models"><i class="fa fa-check"></i><b>3.1.3</b> Target-Mediated Drug Disposition Models</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="modselect.html"><a href="modselect.html#custommod"><i class="fa fa-check"></i><b>3.2</b> Upload Custom Model File</a></li>
+<li class="chapter" data-level="3.3" data-path="modselect.html"><a href="modselect.html#load-model"><i class="fa fa-check"></i><b>3.3</b> Load Model</a></li>
+<li class="chapter" data-level="3.4" data-path="modselect.html"><a href="modselect.html#model-parameters"><i class="fa fa-check"></i><b>3.4</b> Model Parameters</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="modselect.html"><a href="modselect.html#fe"><i class="fa fa-check"></i><b>3.4.1</b> Fixed Effects</a></li>
+<li class="chapter" data-level="3.4.2" data-path="modselect.html"><a href="modselect.html#random-effects"><i class="fa fa-check"></i><b>3.4.2</b> Random Effects</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="simdet.html"><a href="simdet.html"><i class="fa fa-check"></i><b>4</b> Simulation Details</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="simdet.html"><a href="simdet.html#define-dosing-regimen"><i class="fa fa-check"></i><b>4.1</b> Define Dosing Regimen</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="simdet.html"><a href="simdet.html#rx-label-syntax"><i class="fa fa-check"></i><b>4.1.1</b> Rx Label Syntax</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="simdet.html"><a href="simdet.html#submit-dosing-regimen"><i class="fa fa-check"></i><b>4.2</b> Submit Dosing Regimen</a></li>
+<li class="chapter" data-level="4.3" data-path="simdet.html"><a href="simdet.html#simulation-options"><i class="fa fa-check"></i><b>4.3</b> Simulation Options</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="simdet.html"><a href="simdet.html#time-grid"><i class="fa fa-check"></i><b>4.3.1</b> Time Grid</a></li>
+<li class="chapter" data-level="4.3.2" data-path="simdet.html"><a href="simdet.html#simsettings"><i class="fa fa-check"></i><b>4.3.2</b> Simulation Settings</a></li>
+<li class="chapter" data-level="4.3.3" data-path="simdet.html"><a href="simdet.html#solver-settings"><i class="fa fa-check"></i><b>4.3.3</b> Solver Settings</a></li>
+<li class="chapter" data-level="4.3.4" data-path="simdet.html"><a href="simdet.html#expand-rx-dataset"><i class="fa fa-check"></i><b>4.3.4</b> Expand Rx Dataset</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="simulation-output.html"><a href="simulation-output.html"><i class="fa fa-check"></i><b>5</b> Simulation Output</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="simulation-output.html"><a href="simulation-output.html#user-settings-output-metrics"><i class="fa fa-check"></i><b>5.1</b> User Settings &amp; Output Metrics</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="simulation-output.html"><a href="simulation-output.html#plotting-options"><i class="fa fa-check"></i><b>5.1.1</b> Plotting Options</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="simulation-output.html"><a href="simulation-output.html#start-simulation"><i class="fa fa-check"></i><b>5.2</b> Start Simulation</a></li>
+<li class="chapter" data-level="5.3" data-path="simulation-output.html"><a href="simulation-output.html#pharmacokinetic-profiles"><i class="fa fa-check"></i><b>5.3</b> Pharmacokinetic profiles</a></li>
+<li class="chapter" data-level="5.4" data-path="simulation-output.html"><a href="simulation-output.html#summary-statistics"><i class="fa fa-check"></i><b>5.4</b> Summary statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="report-generation.html"><a href="report-generation.html"><i class="fa fa-check"></i><b>6</b> Report Generation</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="report-generation.html"><a href="report-generation.html#final-report"><i class="fa fa-check"></i><b>6.1</b> Final Report</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="general-information.html"><a href="general-information.html"><i class="fa fa-check"></i><b>7</b> General Information</a></li>
+<li class="chapter" data-level="8" data-path="ref.html"><a href="ref.html"><i class="fa fa-check"></i><b>8</b> References</a></li>
+<li class="chapter" data-level="9" data-path="session-information.html"><a href="session-information.html"><i class="fa fa-check"></i><b>9</b> Session Information</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Shimmer User Guide</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="session-information" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">Chapter 9</span> Session Information<a href="session-information.html#session-information" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This documentation was created in R Studio with the following packages</p>
+<p> </p>
+<pre><code>## R version 4.2.1 (2022-06-23 ucrt)
+## Platform: x86_64-w64-mingw32/x64 (64-bit)
+## Running under: Windows 10 x64 (build 19043)
+## 
+## Matrix products: default
+## 
+## locale:
+## [1] LC_COLLATE=English_United States.utf8  LC_CTYPE=English_United States.utf8   
+## [3] LC_MONETARY=English_United States.utf8 LC_NUMERIC=C                          
+## [5] LC_TIME=English_United States.utf8    
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+##  [1] knitr_1.39          tinytex_0.40        tidyr_1.2.0        
+##  [4] assertr_2.8         matrixcalc_1.0-5    ggpubr_0.4.0       
+##  [7] rmarkdown_2.14      markdown_1.1        flux_0.3-0.1       
+## [10] caTools_1.18.2      DT_0.23             data.table_1.14.2  
+## [13] purrr_0.3.4         dplyr_1.0.9         mrgsolve_1.0.0     
+## [16] bs4Dash_2.1.0       plotly_4.10.0       ggplot2_3.3.6      
+## [19] htmlwidgets_1.5.4   reactable_0.3.0     rhandsontable_0.3.8
+## [22] shinyjs_2.1.0       shinyBS_0.61.1      shinyFeedback_0.4.0
+## [25] shinyWidgets_0.7.1  tablerDash_0.1.0    shiny_1.7.2        
+## 
+## loaded via a namespace (and not attached):
+##  [1] bitops_1.0-7      fontawesome_0.3.0 httr_1.4.3        tools_4.2.1      
+##  [5] backports_1.4.1   bslib_0.4.0       utf8_1.2.2        R6_2.5.1         
+##  [9] DBI_1.1.3         lazyeval_0.2.2    colorspace_2.0-3  withr_2.5.0      
+## [13] gridExtra_2.3     tidyselect_1.1.2  compiler_4.2.1    textshaping_0.3.6
+## [17] cli_3.3.0         labeling_0.4.2    sass_0.4.2        scales_1.2.0     
+## [21] stringr_1.4.0     systemfonts_1.0.4 digest_0.6.29     pkgconfig_2.0.3  
+## [25] htmltools_0.5.3   highr_0.9         fastmap_1.1.0     rlang_1.0.3      
+## [29] rstudioapi_0.13   jquerylib_0.1.4   generics_0.1.3    farver_2.1.1     
+## [33] jsonlite_1.8.0    crosstalk_1.2.0   car_3.1-0         magrittr_2.0.3   
+## [37] Rcpp_1.0.9        munsell_0.5.0     fansi_1.0.3       abind_1.4-5      
+## [41] lifecycle_1.0.1   stringi_1.7.8     yaml_2.3.5        carData_3.0-5    
+## [45] grid_4.2.1        parallel_4.2.1    promises_1.2.0.1  crayon_1.5.1     
+## [49] lattice_0.20-45   cowplot_1.1.1     pillar_1.8.0      ggsignif_0.6.3   
+## [53] glue_1.6.2        evaluate_0.16     vctrs_0.4.1       httpuv_1.6.5     
+## [57] gtable_0.3.0      reactR_0.4.4      assertthat_0.2.1  cachem_1.0.6     
+## [61] xfun_0.31         mime_0.12         xtable_1.8-4      broom_1.0.0      
+## [65] rstatix_0.7.0     later_1.3.0       ragg_1.2.2        viridisLite_0.4.0
+## [69] tibble_3.1.8      memoise_2.0.1     ellipsis_0.3.2</code></pre>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ref.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": false
+}
+});
+});
+</script>
+
+</body>
+
+</html>

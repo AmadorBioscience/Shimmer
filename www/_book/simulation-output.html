@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Simulation Output | Shimmer User Guide</title>
+  <meta name="description" content="Shiny Model Explorer User Guide" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Simulation Output | Shimmer User Guide" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Shiny Model Explorer User Guide" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Simulation Output | Shimmer User Guide" />
+  
+  <meta name="twitter:description" content="Shiny Model Explorer User Guide" />
+  
+
+
+
+<meta name="date" content="2022-12-17" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="images/favicon/favicon.png" type="image/x-icon" />
+<link rel="prev" href="simdet.html"/>
+<link rel="next" href="report-generation.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="assets_custom/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="toc-logo"><img src="images/Regeneron_logo.svg.png"></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#resources"><i class="fa fa-check"></i>Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="dash.html"><a href="dash.html"><i class="fa fa-check"></i><b>1</b> Dashboard</a></li>
+<li class="chapter" data-level="2" data-path="simsteps.html"><a href="simsteps.html"><i class="fa fa-check"></i><b>2</b> Simulation Steps</a></li>
+<li class="chapter" data-level="3" data-path="modselect.html"><a href="modselect.html"><i class="fa fa-check"></i><b>3</b> Model Selection</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="modselect.html"><a href="modselect.html#modlib"><i class="fa fa-check"></i><b>3.1</b> Select from Model Library</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="modselect.html"><a href="modselect.html#model-library-abbreviations"><i class="fa fa-check"></i><b>3.1.1</b> Model Library Abbreviations</a></li>
+<li class="chapter" data-level="3.1.2" data-path="modselect.html"><a href="modselect.html#population-pk-models"><i class="fa fa-check"></i><b>3.1.2</b> Population PK Models</a></li>
+<li class="chapter" data-level="3.1.3" data-path="modselect.html"><a href="modselect.html#target-mediated-drug-disposition-models"><i class="fa fa-check"></i><b>3.1.3</b> Target-Mediated Drug Disposition Models</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="modselect.html"><a href="modselect.html#custommod"><i class="fa fa-check"></i><b>3.2</b> Upload Custom Model File</a></li>
+<li class="chapter" data-level="3.3" data-path="modselect.html"><a href="modselect.html#load-model"><i class="fa fa-check"></i><b>3.3</b> Load Model</a></li>
+<li class="chapter" data-level="3.4" data-path="modselect.html"><a href="modselect.html#model-parameters"><i class="fa fa-check"></i><b>3.4</b> Model Parameters</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="modselect.html"><a href="modselect.html#fe"><i class="fa fa-check"></i><b>3.4.1</b> Fixed Effects</a></li>
+<li class="chapter" data-level="3.4.2" data-path="modselect.html"><a href="modselect.html#random-effects"><i class="fa fa-check"></i><b>3.4.2</b> Random Effects</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="simdet.html"><a href="simdet.html"><i class="fa fa-check"></i><b>4</b> Simulation Details</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="simdet.html"><a href="simdet.html#define-dosing-regimen"><i class="fa fa-check"></i><b>4.1</b> Define Dosing Regimen</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="simdet.html"><a href="simdet.html#rx-label-syntax"><i class="fa fa-check"></i><b>4.1.1</b> Rx Label Syntax</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="simdet.html"><a href="simdet.html#submit-dosing-regimen"><i class="fa fa-check"></i><b>4.2</b> Submit Dosing Regimen</a></li>
+<li class="chapter" data-level="4.3" data-path="simdet.html"><a href="simdet.html#simulation-options"><i class="fa fa-check"></i><b>4.3</b> Simulation Options</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="simdet.html"><a href="simdet.html#time-grid"><i class="fa fa-check"></i><b>4.3.1</b> Time Grid</a></li>
+<li class="chapter" data-level="4.3.2" data-path="simdet.html"><a href="simdet.html#simsettings"><i class="fa fa-check"></i><b>4.3.2</b> Simulation Settings</a></li>
+<li class="chapter" data-level="4.3.3" data-path="simdet.html"><a href="simdet.html#solver-settings"><i class="fa fa-check"></i><b>4.3.3</b> Solver Settings</a></li>
+<li class="chapter" data-level="4.3.4" data-path="simdet.html"><a href="simdet.html#expand-rx-dataset"><i class="fa fa-check"></i><b>4.3.4</b> Expand Rx Dataset</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="simulation-output.html"><a href="simulation-output.html"><i class="fa fa-check"></i><b>5</b> Simulation Output</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="simulation-output.html"><a href="simulation-output.html#user-settings-output-metrics"><i class="fa fa-check"></i><b>5.1</b> User Settings &amp; Output Metrics</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="simulation-output.html"><a href="simulation-output.html#plotting-options"><i class="fa fa-check"></i><b>5.1.1</b> Plotting Options</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="simulation-output.html"><a href="simulation-output.html#start-simulation"><i class="fa fa-check"></i><b>5.2</b> Start Simulation</a></li>
+<li class="chapter" data-level="5.3" data-path="simulation-output.html"><a href="simulation-output.html#pharmacokinetic-profiles"><i class="fa fa-check"></i><b>5.3</b> Pharmacokinetic profiles</a></li>
+<li class="chapter" data-level="5.4" data-path="simulation-output.html"><a href="simulation-output.html#summary-statistics"><i class="fa fa-check"></i><b>5.4</b> Summary statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="report-generation.html"><a href="report-generation.html"><i class="fa fa-check"></i><b>6</b> Report Generation</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="report-generation.html"><a href="report-generation.html#final-report"><i class="fa fa-check"></i><b>6.1</b> Final Report</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="general-information.html"><a href="general-information.html"><i class="fa fa-check"></i><b>7</b> General Information</a></li>
+<li class="chapter" data-level="8" data-path="ref.html"><a href="ref.html"><i class="fa fa-check"></i><b>8</b> References</a></li>
+<li class="chapter" data-level="9" data-path="session-information.html"><a href="session-information.html"><i class="fa fa-check"></i><b>9</b> Session Information</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Shimmer User Guide</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="simulation-output" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Simulation Output<a href="simulation-output.html#simulation-output" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This part of the application has options for customizing the simulation outputs and a preview pane that renders the outputs of the simulation after being processed. What is rendered here will be exported to the report.</p>
+<p> </p>
+<div id="user-settings-output-metrics" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> User Settings &amp; Output Metrics<a href="simulation-output.html#user-settings-output-metrics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="plotting-options" class="section level3 hasAnchor" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Plotting Options<a href="simulation-output.html#plotting-options" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><img src="images/plottingoptions.png" /></p>
+<div id="aesthetic" class="section level4 hasAnchor" number="5.1.1.1">
+<h4><span class="header-section-number">5.1.1.1</span> Aesthetic<a href="simulation-output.html#aesthetic" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Text Size</strong>: Controls the text size of the legend and description.</p>
+<p><strong>Transparency</strong>: Controls the transparency of the data points of user added data (see section 5.1.1.3)</p>
+</div>
+<div id="model-options" class="section level4 hasAnchor" number="5.1.1.2">
+<h4><span class="header-section-number">5.1.1.2</span> Model Options<a href="simulation-output.html#model-options" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Show Prediction Interval</strong>: Enables the prediction interval to display on plot (if random effects are added). No variability can be selected. This selection is displayed in the plot description.</p>
+<p><strong>Concentration Units</strong>: Selection to display the concentration/units on the y-axis.</p>
+<p><strong>Select Plot DV</strong>: Selection for which dependent variable is to be plotted on y-axis. Note that the annotation of this selection is added to the plot description and is taken from the <code>$CAPTURE @annotated</code> block of the model specification file.</p>
+</div>
+<div id="add-user-data-optional" class="section level4 hasAnchor" number="5.1.1.3">
+<h4><span class="header-section-number">5.1.1.3</span> Add user data (optional)<a href="simulation-output.html#add-user-data-optional" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>This application allows users to visually compare the simulation results to an external dataset.</p>
+<p>Column headers should minimally include the following columns: <code>ID</code>, <code>CONCENTRATION</code>, <code>TIME</code>. A <code>DOSE</code> column can be added to stratify the data.</p>
+<div id="user-data-options" class="section level5 hasAnchor" number="5.1.1.3.1">
+<h5><span class="header-section-number">5.1.1.3.1</span> User Data Options<a href="simulation-output.html#user-data-options" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>These options only become available is there is an uploaded dataset by the user.</p>
+<p><strong>Select Plot DV User</strong>: Choose the desired DV, which should be the same as the DV selected in the simulation model options.</p>
+<p><strong>Facet Variable</strong>: Allows users to stratify the plots by this selection. An example is shown in section 5.3.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="start-simulation" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Start Simulation<a href="simulation-output.html#start-simulation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<blockquote class="style1">
+<strong>Step 4/4 of Simulation Steps</strong>
+</blockquote>
+<p>In order to process the <strong>Simulation Input Dataset</strong> and display simulation results, the <span style=" font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #337AFF !important;">Start simulation</span> button should be used.</p>
+<p> </p>
+<p>Transient pop-up messages will appear stating the steps of the simulation in the form of:</p>
+<p><img src="images/sim1.png" /></p>
+<p><img src="images/sim2.png" /></p>
+<p><img src="images/sim3.png" /></p>
+<p><img src="images/sim4.png" /></p>
+<p><img src="images/sim5.png" /></p>
+<p><img src="images/sim6.png" /></p>
+<p> </p>
+</div>
+<div id="pharmacokinetic-profiles" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Pharmacokinetic profiles<a href="simulation-output.html#pharmacokinetic-profiles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Pharmacokinetic profile</strong> plots are rendered with the selected dependent variable on the <code>y-axis</code> and <strong><code>Time after dose (days)</code></strong> on the <code>x-axis</code>.</p>
+<p>Note that there are buttons for <code>Linear</code>, <code>Log</code>, and <code>Both</code> to display accordingly in the Pharmacokinetic Profile Plots section.</p>
+<p> </p>
+<p>A rendering of the simulation output is displayed below.
+<img src="images/pkprofiles.png" /></p>
+<p>A rendering of the simulation output as well as the added user data is displayed below.</p>
+<p><img src="images/addeduserdataplot.png" /></p>
+<p> </p>
+<p><strong>Plotting Options</strong> can be changed after the simulation is processed but will only render visually to the profiles pane if <span style=" font-weight: bold;    color: white !important;border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: #337AFF !important;">Start simulation</span> is executed again.</p>
+<p> </p>
+<p><img src="images/download_3.png" /></p>
+<p>The <strong>simulated dataset</strong> can be downloaded as a <code>(.csv)</code> file. This dataset is different from the <strong>Simulation Input Dataset</strong> previously generated because it contains a unique identifier column (<code>REPI</code>) representing the <font color="green"><strong><code>Specify number of simulation iterations</code></strong></font> setting discussed in <a href="simdet.html#simsettings">Section 4.3.2. Simulation Settings</a> as well as the results for each simulation iteration.</p>
+<p> </p>
+</div>
+<div id="summary-statistics" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Summary statistics<a href="simulation-output.html#summary-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Summary statistics</strong> provide output metrics of the simulation and are calculated as follows:</p>
+<p> </p>
+<p>PK metrics (Cmax, Tmax, &amp; AUC) are calculated for each subject, and the median value is summarized across subjects within each simulation iteration and dosing regimen. Finally, PK metric summary statistics (median, mean, &amp; standard deviation) are calculated by dosing regimen across the simulation iterations.</p>
+<p><strong>Cmax</strong>: The maximum concentration of simulated drug</p>
+<p><strong>Tmax</strong>: The time at which the maximum concentration of drug is achieved</p>
+<p><strong>Tlast</strong>: The maximum time in the interval</p>
+<p><strong>AUC</strong>: The Area Under the Curve is calculated following the trapezoid rule from <font color="darkred"><strong><code>flux::auc()</code></strong></font></p>
+<p>Users have the ability to control the time at which PK metrics are calculated by using the <strong>Interval</strong> slider.</p>
+<hr />
+<div class="line-block"><a href="https://search.r-project.org/CRAN/refmans/flux/html/auc.html" title="Calculate the area under a line(curve).">flux::auc()</a></div>
+<hr />
+<p><img src="images/sumstat.png" /></p>
+<p> </p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="simdet.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="report-generation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": false
+}
+});
+});
+</script>
+
+</body>
+
+</html>
